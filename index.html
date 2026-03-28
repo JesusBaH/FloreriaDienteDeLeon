@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Florería Diente de León | Próximamente</title>
-    
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,400;1,200;1,400&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
     <style>
         :root {
             --primario: #5d6d3e;
-            --secundario: #f4e8c1;
+            --secundario: #ebead8;
             --acento: #d4a373;
             --texto: #333;
             --blanco: #ffffff;
@@ -28,133 +27,156 @@
             font-family: 'Poppins', sans-serif;
             background-color: var(--secundario);
             color: var(--texto);
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden; 
+            overflow-x: hidden;
             position: relative;
+            padding: 20px 0;
         }
 
-        .background-circles {
+        .background-texture {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-        }
-
-        .circle {
-            position: absolute;
-            background-color: rgba(93, 109, 62, 0.1); 
-            border-radius: 50%;
-            animation: float 15s infinite ease-in-out;
-        }
-
-        .circle:nth-child(1) { width: 100px; height: 100px; top: 10%; left: 10%; animation-delay: 0s; }
-        .circle:nth-child(2) { width: 150px; height: 150px; top: 70%; left: 20%; animation-delay: 3s; }
-        .circle:nth-child(3) { width: 80px; height: 80px; top: 30%; left: 80%; animation-delay: 6s; }
-        .circle:nth-child(4) { width: 120px; height: 120px; top: 80%; left: 70%; animation-delay: 9s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
+            background-image: radial-gradient(var(--primario) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.03;
         }
 
         .container {
-            text-align: center;
-            padding: 40px;
-            background-color: rgba(255, 255, 255, 0.9);
+            padding: 60px 40px;
+            background-color: rgba(255, 255, 255, 0.98);
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            max-width: 600px;
-            width: 90%;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+            max-width: 650px;
+            width: 95%;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
-        .logo {
+        .logo-wrapper {
+            width: 85px;
+            height: 85px;
+            margin-bottom: 20px;
+        }
+
+        .logo-wrapper img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .brand-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 0.85rem;
+            font-weight: 400;
             color: var(--primario);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
+            letter-spacing: 9px;
+            margin-bottom: 35px;
+            display: block;
+        }
+
+        .content-group {
+            max-width: 550px;
+            margin-bottom: 50px;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 400;
+            font-size: 3.5rem;
+            font-weight: 200;
             color: var(--texto);
-            margin-bottom: 15px;
-            line-height: 1.2;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
 
         h1 span {
             font-style: italic;
             color: var(--acento);
+            display: block;
+            font-size: 2rem;
+            margin-top: 5px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         p {
             font-size: 1.1rem;
             color: var(--texto);
-            margin-bottom: 30px;
             font-weight: 300;
+            line-height: 1.7;
         }
 
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background-color: #25d366; 
+            gap: 12px;
+            background-color: #25d366;
             color: #fff;
-            padding: 12px 25px;
+            padding: 16px 35px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 400;
             font-size: 1rem;
-            transition: transform 0.3s, background 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(37, 211, 102, 0.15);
         }
 
         .whatsapp-btn img {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
         }
 
         .whatsapp-btn:hover {
             background-color: #128c7e;
             transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.25);
         }
 
         footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #888;
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #999;
+            letter-spacing: 1px;
+            width: 100%;
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .logo { font-size: 1.8rem; }
-            .container { padding: 30px 20px; }
+            .container { padding: 50px 25px; }
+            .logo-wrapper { width: 75px; height: 75px; }
+            .brand-title { font-size: 0.8rem; letter-spacing: 6px; }
+            h1 { font-size: 2.5rem; }
+            h1 span { font-size: 1.6rem; }
+            p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="background-circles">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
+    <div class="background-texture"></div>
 
     <div class="container">
-        <div class="logo">Diente de León</div>
-        <h1>Cuenta historias con flores<br><span>Próximamente</span></h1>
-        <p>Estamos diseñando una experiencia floral única para ti. Muy pronto podrás explorar nuestro catálogo en línea.</p>
+        <div class="logo-wrapper">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+
+        <span class="brand-title">Florería Diente de León</span>
+
+        <div class="content-group">
+            <h1>Cuenta historias con flores<span>Próximamente</span></h1>
+            <p>Estamos diseñando una experiencia floral única para ti. Muy pronto podrás explorar nuestro catálogo en línea.</p>
+        </div>
         
         <a href="https://wa.me/522223328721?text=Hola,%20me%20gustaría%20cotizar%20un%20ramo" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
@@ -162,7 +184,7 @@
         </a>
 
         <footer>
-            &copy; 2026 Diente de León. Todos los derechos reservados.
+            &copy; 2026 Florería Diente de León. Todos los derechos reservados.
         </footer>
     </div>
 
